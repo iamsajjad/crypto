@@ -64,10 +64,10 @@ class Crypto:
 
 key = 512
 text = 'this is test text !!! crypto.'
-print(text)
+print("  Text : " + text)
 
 encoded = Crypto(text, key=key, exp=False).encode()
-print(encoded)
+print("Encode : " + encoded)
 
 decoded = Crypto(encoded, key=key, exp=False).decode()
-print(decoded)
+print("Decode : " + decoded)
