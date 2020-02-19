@@ -17,12 +17,12 @@ class Crypto:
             for i,j in enumerate(binText):
                 print("'{}' is '{}'".format(self.text[i], j))
         
-        binTable = [str(int(8-len(str(bin(i))[2:])) * '0') + str(bin(i + self.key))[2:] for i in range(len(binText))]
+        binTable = [str(int(8-len(str(bin(i))[2:])) * '0') + str(bin(i + self.key))[2:] for i in range(len(binText), -1, -1)]
         binTable = [bin(int(i, 2))[2:] for i in binTable]
         
         if self.exp == True:
             for i,j in enumerate(binTable):
-                print('{} + {} = {}'.format(self.key, i, j))
+                print('{} + {} = {}'.format(self.key, len(binText) - i, j))
 
         cryptoText = []
         
@@ -43,12 +43,12 @@ class Crypto:
             for i,j in enumerate(binText):
                 print("'{}' is '{}'".format(self.text[i], j))
         
-        binTable = [str(int(8-len(str(bin(i))[2:])) * '0') + str(bin(i + self.key))[2:] for i in range(len(binText))]
+        binTable = [str(int(8-len(str(bin(i))[2:])) * '0') + str(bin(i + self.key))[2:] for i in range(len(binText), -1, -1)]
         binTable = [bin(int(i, 2))[2:] for i in binTable]
         
         if self.exp == True:
             for i,j in enumerate(binTable):
-                print('{} + {} = {}'.format(self.key, i, j))
+                print('{} + {} = {}'.format(self.key, len(binTable) - i, j))
 
         cryptoText = []
         
