@@ -8,7 +8,7 @@ def subbandthread(word, zeros, start, end):
         hashBuffer = hashlib.sha3_512(bytes(word + "{}".format(number), "utf-8")).hexdigest()
         if hashBuffer[:zeros] == zeros * "0": break
         print(hashBuffer)
-    return "\nMatch : " + hashBuffer + "\nCheck : {}\n".format(number)
+    return "\nMatch : " + hashBuffer + "\nNumber : {}\n".format(number)
 
 out = subbandthread(str(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
 
